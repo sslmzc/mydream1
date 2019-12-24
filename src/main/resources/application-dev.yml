@@ -1,0 +1,45 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /mydream
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://188.131.218.217:3306/mydream?serverTimezone=UTC&characterEncoding=utf-8
+    username: zhangcan
+    password: zhangcan123
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  redis:
+    database: 0
+    host: localhost
+    port: 6379
+    password:
+    timeout: 5000
+    jedis:
+      pool:
+        max-wait: -1
+        max-active: 1000
+        max-idle: 10
+        min-idle: 2
+
+
+
+  thymeleaf:
+    prefix: /templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    cache: true
+
+  messages:
+    basename: i18/messages
+    cache-duration: 3600
+    encoding: UTF-8
+
